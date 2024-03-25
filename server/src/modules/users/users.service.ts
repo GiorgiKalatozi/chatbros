@@ -8,8 +8,8 @@ import { UsersRepository } from './users.repository';
 export class UsersService {
   constructor(private readonly usersRepository: UsersRepository) {}
 
-  create(createUserInput: CreateUserInput) {
-    return 'This action adds a new user';
+  public create(createUserInput: CreateUserInput): Promise<User> {
+    return this.usersRepository.create(createUserInput);
   }
 
   public async findAll(): Promise<User[]> {
