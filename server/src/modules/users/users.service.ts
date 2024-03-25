@@ -16,6 +16,7 @@ export class UsersService {
     const hashedPassword = await this.hashingService.hash(
       createUserInput.password,
     );
+
     return this.usersRepository.create({
       ...createUserInput,
       password: hashedPassword,
@@ -37,6 +38,7 @@ export class UsersService {
     const hashedPassword = await this.hashingService.hash(
       updateUserInput.password,
     );
+
     return this.usersRepository.findOneAndUpdate(
       { _id: id },
       {
@@ -48,7 +50,7 @@ export class UsersService {
     );
   }
 
-  public async remove(id: string) {
+  public async remove(id: string): Promise<User> {
     return this.usersRepository.findOneAndDelete({ _id: id });
   }
 }
