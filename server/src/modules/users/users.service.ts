@@ -35,16 +35,16 @@ export class UsersService {
     id: string,
     updateUserInput: UpdateUserInput,
   ): Promise<User> {
-    const hashedPassword = await this.hashingService.hash(
-      updateUserInput.password,
-    );
+    if (updateUserInput.password) {
+      updateUserInput.password ===
+        (await this.hashingService.hash(updateUserInput.password));
+    }
 
     return this.usersRepository.findOneAndUpdate(
       { _id: id },
       {
         $set: {
           ...updateUserInput,
-          password: hashedPassword,
         },
       },
     );
