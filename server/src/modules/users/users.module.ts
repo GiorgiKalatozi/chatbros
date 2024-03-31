@@ -4,8 +4,7 @@ import { User, UserSchema } from './entities/user.entity';
 import { UsersRepository } from './users.repository';
 import { UsersResolver } from './users.resolver';
 import { UsersService } from './users.service';
-import { HashingService } from 'src/common/hashing/hashing.service';
-import { BcryptService } from 'src/common/hashing/bcrypt.service';
+import { BcryptService, HashingService } from 'src/utils';
 
 @Module({
   imports: [

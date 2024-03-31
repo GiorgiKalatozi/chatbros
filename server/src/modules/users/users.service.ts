@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { HashingService } from 'src/common/hashing/hashing.service';
+import { HashingService } from 'src/utils';
 import { CreateUserInput } from './dtos/create-user.input';
 import { UpdateUserInput } from './dtos/update-user.input';
 import { User } from './entities/user.entity';
