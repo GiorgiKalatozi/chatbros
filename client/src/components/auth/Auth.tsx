@@ -24,20 +24,20 @@ export default function Auth({ submitLabel, onSubmit, children }: AuthProps) {
         justifyContent: "center",
       }}>
       <TextField
-        type="email"
-        label="Email"
-        variant="outlined"
+        type='email'
+        label='Email'
+        variant='outlined'
         value={email}
         onChange={(event) => setEmail(event.target.value)}
       />
       <TextField
-        type="password"
-        label="Password"
-        variant="outlined"
+        type='password'
+        label='Password'
+        variant='outlined'
         value={password}
         onChange={(event) => setPassword(event.target.value)}
       />
-      <Button variant="contained" onClick={() => onSubmit({ email, password })}>
+      <Button variant='contained' onClick={() => onSubmit({ email, password })}>
         {submitLabel}
       </Button>
       {children}

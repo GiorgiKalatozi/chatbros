@@ -5,7 +5,10 @@ import { AppModule } from './app.module';
 import { ConfigService } from './config';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { bufferLogs: true });
+  const app = await NestFactory.create(AppModule, {
+    bufferLogs: true,
+    cors: true,
+  });
 
   app.useGlobalPipes(new ValidationPipe());
   app.useLogger(app.get(Logger));
